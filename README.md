@@ -1,5 +1,5 @@
 # BlurDetectionROI
-This Windows Forms application gives the client recommendations for images based on the calculated sharpness value. Users can open an image and select a region of interest within the image to examine. The program will compute the sharpness based on this region and output both the sharpness value and "Blurry" or "Not Blurry" to the user. The window will zoom in to the image's region of interest to enable users to determine if the algorithm has given them a false negative. The user can also switch between seeing the edges in the image or the full RGB image.
+This Windows Forms application gives the user recommendations for images based on the calculated sharpness value. Users can open an image and select a region of interest within the image to examine. The program will compute the sharpness based on this region and output both the sharpness value and "Blurry" or "Not Blurry" to the user. The window will zoom in to the image's region of interest to enable users to determine if the algorithm has given them a false negative. The user can also switch between seeing the edges in the image or the full RGB image.
 
 ## Algorithm Description
 This blur detection algorithm works by convolving the grayscale channel of an image with a 3x3 kernel, specifically the Laplacian kernel. The Laplacian operator is used to measure the 2nd derivative of an image and is commonly used for edge detection. It highlights rapid changes in the gray levels of an image. To determine the sharpness of an image, we look at the variance of the laplacian operator. If there is a high variance, then there are many edges and non-edges, which is typically representative of an image that is in-focus. Likewise, a low variance tells us there are very few edges within the image, indicative of a blurry image. To increase the accuracy of the variance of the laplacian operator, we need to do some image pre-processing.
@@ -16,3 +16,4 @@ There are three primary use cases for this program. The first is for noisy, high
 ## Built With
 - .NET Framework 4.6.1
 - Emgu CV
+- Windows Forms
